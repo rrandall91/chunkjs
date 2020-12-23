@@ -25,7 +25,7 @@
   "homepage": "https://github.com/rrandall91/chunkjs#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm test"
     }
   },
   "lint-staged": {
