@@ -104,10 +104,14 @@ describe("chunkjs", () => {
       expect(batches).toHaveLength(3);
     });
 
-    it("should throw an error if the number of elements is larger than the size of the array", () => {
+    it("should throw not an error if the number of elements is larger than the size of the array", () => {
       const array = [ 1, 2, 3 ];
   
-      expect(() => chunkjs.splitIntoBatches(array, (array.length + 1))).toThrow();
+      expect(() => chunkjs.splitIntoBatches(array, (array.length + 1))).not.toThrow();
+
+      const batches = chunkjs.splitIntoBatches(array, (array.length + 1));
+      
+      expect(batches).toHaveLength(1);
     });
   
     it("should throw an error if the number of elements is zero", () => {

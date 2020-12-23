@@ -50,8 +50,8 @@ module.exports = {
       throw new TypeError("A number is required for the second argument");
     }
   
-    if (numberOfElements === 0 || numberOfElements > array.length) {
-      throw new Error("numberOfChunks must be greater than zero and cannot be larger than the size of the array");
+    if (numberOfElements === 0) {
+      throw new Error("numberOfElemenbts must be greater than zero");
     }
 
     const batches = [];
