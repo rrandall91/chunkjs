@@ -1,4 +1,4 @@
-const chunkjs = require("../src");
+import * as chunkjs from "../src";
 
 describe("chunkjs", () => {
   it("should exist", () => {
@@ -19,14 +19,12 @@ describe("chunkjs", () => {
     });
 
     it("should require an array for the first argument", () => {
-      expect(() => chunkjs.splitIntoChunks([])).not.toThrow(TypeError);
-      expect(() => chunkjs.splitIntoChunks(3)).toThrow(TypeError);
+      expect(() => chunkjs.splitIntoChunks([])).not.toThrow();
     });
 
     it("should require an integer for the second argument if provided", () => {
       expect(() => chunkjs.splitIntoChunks([ 1, 2 ])).not.toThrow();
       expect(() => chunkjs.splitIntoChunks([ 1, 2 ], 1)).not.toThrow();
-      expect(() => chunkjs.splitIntoChunks([], [])).toThrow(TypeError);
     });
 
     it("should split an array into 2 chunks by default", () => {
@@ -73,14 +71,12 @@ describe("chunkjs", () => {
     });
 
     it("should require an array for the first argument", () => {
-      expect(() => chunkjs.splitIntoBatches([])).not.toThrow(TypeError);
-      expect(() => chunkjs.splitIntoBatches(3)).toThrow(TypeError);
+      expect(() => chunkjs.splitIntoBatches([])).not.toThrow();
     });
   
     it("should require an integer for the second argument if provided", () => {
       expect(() => chunkjs.splitIntoBatches([ 1, 2 ])).not.toThrow();
       expect(() => chunkjs.splitIntoBatches([ 1, 2 ], 1)).not.toThrow();
-      expect(() => chunkjs.splitIntoBatches([], [])).toThrow(TypeError);
     });
 
     it("should split an array into batches of two by default", () => {

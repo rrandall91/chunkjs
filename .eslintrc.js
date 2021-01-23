@@ -9,6 +9,8 @@ module.exports = {
     "prettier",
   ],
   parserOptions: { ecmaVersion: 11 },
+  settings: { "import/resolver": { node: { extensions: [ ".js", ".jsx", ".ts", ".tsx" ] } } },
+  ignorePatterns: [ "dist" ],
   rules: {
     strict: [ "error", "global" ],
     quotes: [ "error", "double", { allowTemplateLiterals: true } ],
@@ -34,13 +36,24 @@ module.exports = {
     "object-curly-newline": [ "error", { multiline: true } ],
     "eol-last": [ "error", "always" ],
     "space-before-function-paren": [ "error", { "anonymous": "always", "named": "never", "asyncArrow": "always" } ],
-    "multiline-comment-style": [ "error", "starred-block" ],
+
+    // "multiline-comment-style": [ "error", "starred-block" ],
     "lines-around-comment": [ "error", { beforeBlockComment: true, afterBlockComment: false, beforeLineComment: true, afterLineComment: false } ],
     "no-multiple-empty-lines": [ "error", { max: 1, maxEOF: 1, maxBOF: 0 } ],
     "space-before-blocks": [ "error", "always" ],
     "keyword-spacing": [ "error", { before: true, after: true } ],
     "arrow-spacing": [ "error", { before: true, after: true } ],
     "no-self-assign": [ "error", { "props": true } ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   overrides: [
 
