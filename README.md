@@ -16,12 +16,12 @@ yarn add chunkjs
 
 ## Usage
 
-ChunkJS is comprised of two functions: `splitIntoChunks` and `splitIntoBatches`:
+ChunkJS is comprised of two functions: `createChunks` and `createBatches`:
 
 ```javascript
-splitIntoChunks(array, numberOfChunks);
+createChunks(array, numberOfChunks);
 
-splitIntoBatches(array, numberOfElementsPerBatch);
+createBatches(array, numberOfElementsPerBatch);
 ```
 
 ### Examples
@@ -29,9 +29,9 @@ splitIntoBatches(array, numberOfElementsPerBatch);
 To split an array into an _n_ number of chunks (default size is 2):
 
 ```javascript
-const { splitIntoChunks } = require("chunkjs");
+const { createChunks } = require("chunkjs");
 
-splitIntoChunks([ 1, 2, 3, 4, 5, 6 ], 2);
+createChunks([ 1, 2, 3, 4, 5, 6 ], 2);
 // returns [ [ 1, 2, 3 ], [ 4, 5, 6 ] ]
 
 ```
@@ -39,8 +39,8 @@ splitIntoChunks([ 1, 2, 3, 4, 5, 6 ], 2);
 To split an array into batches with _n_ number of elements (default size is 2):
 
 ```javascript
-const { splitIntoBatches } = require("chunkjs");
+const { createBatches } = require("chunkjs");
 
-splitIntoBatches([ 1, 2, 3, 4, 5, 6 ], 2);
+createBatches([ 1, 2, 3, 4, 5, 6 ], 2);
 // returns [ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ] ]
 ```
