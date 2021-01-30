@@ -12,6 +12,7 @@
     "test:watch": "jest --watchAll",
     "prepublish": "npm run build"
   },
+  "files": ["dist/**/*"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rrandall91/chunkjs.git"
