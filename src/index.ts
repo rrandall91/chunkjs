@@ -1,10 +1,15 @@
-  /**
+interface ChunkOptions {
+  array: any[],
+  elements: number,
+}
+
+/**
    * Splits an array into n chunks
    * 
    * @param Array array 
    * @param Integer numberOfChunks 
    */
-  export function splitIntoChunks (array: any[] = [], numberOfChunks = 2): any[] {
+  export function createChunks(array: any[] = [], numberOfChunks = 2): any[] {
     if (numberOfChunks === 0 || ( array.length > 0 && numberOfChunks > array.length)) {
       throw new Error("numberOfChunks must be greater than zero and cannot be larger than the size of the array");
     }
@@ -31,7 +36,7 @@
    * @param Array array 
    * @param Integer numberOfElements 
    */
-  export function splitIntoBatches (array: any[] = [], numberOfElements = 2): any[] {
+  export function createBatches (array: any[] = [], numberOfElements = 2): any[] {
     if (numberOfElements === 0) {
       throw new Error("numberOfElements must be greater than zero and cannot be larger than the size of the array");
     }
@@ -43,4 +48,30 @@
     }
       
     return batches;
+  }
+
+  /**
+   * Splits an array into n chunks
+   * @deprecated
+   * 
+   * @param Array array 
+   * @param Integer numberOfChunks 
+   */
+  export function splitIntoChunks (array: any[] = [], numberOfChunks = 2): any[] {
+    console.warn("splitIntoChunks is deprecated and should be replaced by createChunks");
+
+    return createChunks(array, numberOfChunks);
+  }
+
+  /**
+   * Splits an array into batches of n elements
+   * @deprecated
+   * 
+   * @param Array array 
+   * @param Integer numberOfElements 
+   */
+  export function splitIntoBatches (array: any[] = [], numberOfElements = 2): any[] {
+    console.warn("splitIntoBatches is deprecated and should be replaced by createBatches");
+
+    return createBatches(array, numberOfElements);
   }
