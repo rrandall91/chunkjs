@@ -8,6 +8,7 @@
       "strict": true,
       "declaration": true
     },
+    "files": ["dist/**/*"],
     "include": [
       "./src/*.ts",
       "./src/**/*.ts"
