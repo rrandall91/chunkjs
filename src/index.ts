@@ -1,8 +1,3 @@
-interface ChunkOptions {
-  array: any[],
-  elements: number,
-}
-
 /**
    * Splits an array into n chunks
    * 
