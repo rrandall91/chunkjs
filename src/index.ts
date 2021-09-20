@@ -4,16 +4,16 @@
    * @param Array array 
    * @param Integer numberOfChunks 
    */
-  export function createChunks(array: any[] = [], numberOfChunks = 2): any[] {
+  export function createChunks<T>(array: T[] = [], numberOfChunks = 2): T[][] {
     if (numberOfChunks === 0 || ( array.length > 0 && numberOfChunks > array.length)) {
       throw new Error("numberOfChunks must be greater than zero and cannot be larger than the size of the array");
     }
 
-    const chunks: any[] = [];
+    const chunks: T[][] = [];
     const size: number = Math.ceil(array.length / numberOfChunks);
 
     for (let index = 0; index < array.length; index++) {
-      const chunk: any[] = chunks[chunks.length - 1];
+      const chunk: T[] | undefined = chunks[chunks.length - 1];
 
       if (!chunk || chunk.length === size) {
         chunks.push([ array[index] ]);
@@ -31,12 +31,12 @@
    * @param Array array 
    * @param Integer numberOfElements 
    */
-  export function createBatches (array: any[] = [], numberOfElements = 2): any[] {
+  export function createBatches<T>(array: T[] = [], numberOfElements = 2): T[][] {
     if (numberOfElements === 0) {
       throw new Error("numberOfElements must be greater than zero and cannot be larger than the size of the array");
     }
 
-    const batches: any[] = [];
+    const batches: T[][] = [];
 
     for (let index: number = 0; index < array.length; index += numberOfElements) {
       batches.push(array.slice(index, index + numberOfElements));
@@ -52,7 +52,7 @@
    * @param Array array 
    * @param Integer numberOfChunks 
    */
-  export function splitIntoChunks (array: any[] = [], numberOfChunks = 2): any[] {
+  export function splitIntoChunks<T>(array: T[] = [], numberOfChunks = 2): T[][] {
     console.warn("splitIntoChunks is deprecated and should be replaced by createChunks");
 
     return createChunks(array, numberOfChunks);
@@ -65,7 +65,7 @@
    * @param Array array 
    * @param Integer numberOfElements 
    */
-  export function splitIntoBatches (array: any[] = [], numberOfElements = 2): any[] {
+  export function splitIntoBatches<T>(array: T[] = [], numberOfElements = 2): T[][] {
     console.warn("splitIntoBatches is deprecated and should be replaced by createBatches");
 
     return createBatches(array, numberOfElements);
