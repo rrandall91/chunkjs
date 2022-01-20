@@ -117,39 +117,3 @@ describe("chunkjs", () => {
     });
   });
 });
-
-describe("Deprecated functions that should still work properly", () => {
-  describe("splitIntoChunks function", () => {
-    it("should exist", () => {
-      expect(typeof chunkjs.splitIntoChunks).not.toBe("undefined");
-    });
-  
-    it("should be a function", () => {
-      expect(typeof chunkjs.splitIntoChunks).toBe("function");
-    });
-  
-    it("should split an array into n chunks when provided", () => {
-      const array = [ 1, 2, 3, 4, 5, 6 ];
-      const chunks = chunkjs.splitIntoChunks(array, 3);
-  
-      expect(chunks).toHaveLength(3);
-    });
-  });
-
-  describe("splitIntoBatches function", () => {
-    it("should exist", () => {
-      expect(typeof chunkjs.splitIntoBatches).not.toBe("undefined");
-    });
-
-    it("should be a function", () => {
-      expect(typeof chunkjs.splitIntoBatches).toBe("function");
-    });
-  
-    it("should split an array into batches of n when provided", () => {
-      const array = [ 1, 2, 3, 4, 5, 6 ];
-      const batches = chunkjs.splitIntoBatches(array, 3);
-  
-      expect(batches).toHaveLength(2);
-    });
-  });
-});

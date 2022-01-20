@@ -44,29 +44,3 @@
       
     return batches;
   }
-
-  /**
-   * Splits an array into n chunks
-   * @deprecated
-   * 
-   * @param Array array 
-   * @param Integer numberOfChunks 
-   */
-  export function splitIntoChunks<T>(array: T[] = [], numberOfChunks = 2): T[][] {
-    console.warn("splitIntoChunks is deprecated and should be replaced by createChunks");
-
-    return createChunks(array, numberOfChunks);
-  }
-
-  /**
-   * Splits an array into batches of n elements
-   * @deprecated
-   * 
-   * @param Array array 
-   * @param Integer numberOfElements 
-   */
-  export function splitIntoBatches<T>(array: T[] = [], numberOfElements = 2): T[][] {
-    console.warn("splitIntoBatches is deprecated and should be replaced by createBatches");
-
-    return createBatches(array, numberOfElements);
-  }
