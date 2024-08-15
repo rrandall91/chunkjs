@@ -1,6 +1,6 @@
 {
   "name": "chunkjs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A minimal library for creating chunks of arrays in JavaScript",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
